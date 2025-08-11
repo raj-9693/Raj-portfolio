@@ -601,7 +601,7 @@ const HomePage = () => {
               <span className="animate-pulse text-blue-400">|</span>
             </span>
           </motion.h2>
-          <style jsx>{`
+          <style>{`
             @keyframes gradient-shift {
               0%,
               100% {
