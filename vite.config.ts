@@ -6,7 +6,7 @@ import { tempo } from "tempo-devtools/dist/vite";
 
 
 export default defineConfig({
-  base: "/Raj-portfolio",
+  base: "/Raj-portfolio/",
   optimizeDeps: {
     entries: ["src/main.tsx", "src/tempobook/**/*"],
   },
