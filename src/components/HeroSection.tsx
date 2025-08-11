@@ -20,10 +20,12 @@ const HeroSection = ({
   title = "HAY! I'M RAJ",
   subtitle = "I'M AN ANDROID DEVELOPER",
   description = "Yet best any for traveling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment.",
+  
 }: HeroSectionProps) => {
   const [typedText, setTypedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = subtitle;
+  
 
   useEffect(() => {
     if (currentIndex < fullText.length) {
