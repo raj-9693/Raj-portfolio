@@ -683,7 +683,7 @@ const HomePage = () => {
         <div className="flex-1 relative">
           <div className="relative z-10">
             <img
-             src={`${import.meta.env.BASE_URL}profile.png`}
+             src="/profile.png"
               alt="Raj Kumar Nishad"
               className="rounded-full max-w-md mx-auto shadow-2xl shadow-blue-500/20 animate-bounce"
               style={{
