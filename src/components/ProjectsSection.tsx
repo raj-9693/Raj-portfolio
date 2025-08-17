@@ -29,7 +29,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       technologies: ["Kotlin", "MVVM", "API"],
       githubUrl: "https://github.com/raj-9693/InstaNews-App",
       videoUrl:
-        "https://www.linkedin.com/posts/raj-kumar-nishad_androiddevelopment-roomdatabase-kotlin-activity-7341817769476132864-70ju?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAFZWYCoB4RdaVIur1x-qAMB6bPOjXgZTn7s&utm_campaign=copy_link",
+        "https://www.linkedin.com/posts/raj-kumar-nishad_androiddevelopment-kotlin-newsapp-activity-7361731470563983363-WQdK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFZWYCoB4RdaVIur1x-qAMB6bPOjXgZTn7s",
     },
     {
       id: "2",
@@ -41,7 +41,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       technologies: ["Room", "Kotlin", "LiveData"],
       githubUrl: "https://github.com/raj-9693/Student_info",
       videoUrl:
-        "https://www.linkedin.com/posts/raj-kumar-nishad_androiddevelopment-roomdatabase-kotlin-activity-7341817769476132864-70ju?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAFZWYCoB4RdaVIur1x-qAMB6bPOjXgZTn7s&utm_campaign=copy_link",
+        "https://www.linkedin.com/posts/raj-kumar-nishad_androiddevelopment-roomdatabase-kotlin-activity-7341817769476132864-70ju?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFZWYCoB4RdaVIur1x-qAMB6bPOjXgZTn7s",
     },
     {
       id: "3",
