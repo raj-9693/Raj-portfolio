@@ -791,7 +791,7 @@ const HomePage = () => {
               asChild
             >
               <a
-                href="https://drive.google.com/uc?export=download&id=1gKmdz9PybpUBrhmGFp-dAt8qJt9UWiPh"
+                href="https://drive.google.com/file/d/1n2tBZd_-_6l-yzDRwttGdWUMQ9tlCOON/view?usp=sharing"
                 download="Raj_Kumar_Nishad_Resume.pdf"
               >
                 <Download size={18} />
@@ -804,7 +804,7 @@ const HomePage = () => {
               asChild
             >
               <a
-                href="https://drive.google.com/file/d/1gKmdz9PybpUBrhmGFp-dAt8qJt9UWiPh/view?usp=sharing"
+                href="https://drive.google.com/file/d/1n2tBZd_-_6l-yzDRwttGdWUMQ9tlCOON/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
