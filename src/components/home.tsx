@@ -32,6 +32,7 @@ const HomePage = () => {
     { name: "XML" },
     { name: "Android SDK" },
     { name: "GitHub" },
+     { name: "React Native" },
     { name: "Coroutines" },
     
   ];
