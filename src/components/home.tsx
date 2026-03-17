@@ -487,7 +487,9 @@ const HomePage = () => {
         <div className="flex-1 relative">
           <div className="relative z-10">
             <img
-              src={`${import.meta.env.BASE_URL}profile.png`}
+            
+               src={`${import.meta.env.BASE_URL}images/tempo-image-20260317T131035906Z.png`}
+
               alt="Raj Kumar Nishad"
               className="rounded-full max-w-md mx-auto shadow-2xl shadow-blue-500/20 animate-bounce"
               style={{
@@ -517,7 +519,8 @@ const HomePage = () => {
         <div className="flex-1 relative">
           <div className="relative z-10">
             <img
-              src={`${import.meta.env.BASE_URL}profile.png`}
+              src={`${import.meta.env.BASE_URL}images/tempo-image-20260317T131035906Z.png`}
+             
               alt="Raj Kumar Nishad"
               className="rounded-full max-w-md mx-auto shadow-2xl shadow-blue-500/20"
               style={{
