@@ -1,0 +1,17 @@
+PROMPT COMPARISON TEST 2 (OPTIMIZED ONLY)
+
+Query: "What React Native skills does Raj have?"
+
+=== RUNNING OPTIMIZED CONFIG ===
+Time: 22836ms
+Reply:
+ React Native CLI
+        *
+
+Off-topic Query: "Tell me a joke"
+
+=== RUNNING OPTIMIZED CONFIG (OFF-TOPIC) ===
+Time: 16929ms
+Reply:
+I couldn't find
+

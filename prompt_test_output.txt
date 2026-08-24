@@ -1,0 +1,37 @@
+PROMPT COMPARISON TEST
+
+Query: "What React Native skills does Raj have?"
+
+=== RUNNING CURRENT CONFIG ===
+Time: 24384ms
+Reply:
+Hey there! 🚀 Raj has some serious hands-on experience with **React Native** and is ready to build high-performance, cross-platform apps! 
+
+Here is a breakdown of his **React Native skills**:
+
+* **Core & Architecture:** React Native CLI, Expo CLI, JavaScript (ES6+), Context API (State Management), and Authentication Flows.
+* **Navigation:** React Navigation, Stack Navigation, and Bottom Tab Navigation.
+* **UI/UX Development:** Responsive UI design using Flexbox styling.
+* **Networking & APIs:** REST API Integration using Axios.
+* **Data & Local Storage:** AsyncStorage and Custom SQLite transactions for local database storage.
+* **Build & Tools:** Android Build Process, Gradle, Firebase Basics, and Git/GitHub.
+
+### 🛠️ React Native Projects in Action:
+Raj doesn't just learn; he builds! Here are a couple of his notable React Native implementations:
+* **Digital Drawing Canvas App:** Built with layered logic, pencil tools, and custom eraser states.
+* **Data-Filtering Search Component:** Created using conditional array filtering for a smooth user experience.
+
+Raj is super eager to bring these skills to a collaborative team as an intern or entry-level developer! If you'd like to see his code, check out his GitHub (https://github.com/raj-9693) or let's get you connected with him! 🚀
+
+=== RUNNING OPTIMIZED CONFIG ===
+Time: 4053ms
+Reply:
+{"error":{"code":503,"message":"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.","status":"UNAVAILABLE"}}
+
+Off-topic Query: "Tell me a joke"
+
+=== RUNNING OPTIMIZED CONFIG (OFF-TOPIC) ===
+Time: 1137ms
+Reply:
+{"error":{"code":503,"message":"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.","status":"UNAVAILABLE"}}
+

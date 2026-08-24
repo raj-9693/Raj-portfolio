@@ -1,0 +1,9 @@
+gemini-3.5-flash Status: 200 in 2683ms
+Response: {"candidates":[{"content":{"parts":[{"text":"Hello","thoughtSignature":"EvkDCvYDARFNMg/lXGAEBmiJ+RGe9YPtm7mAd5BHC1c1vHtiqetkjyzvikoUldQKus/LKOR0shs0AC4DS6ZhVLffMoq/6p2zTOYCe9rk13sfDY8YbOx7VNkl7c11T1yBfLIMzn1CocnqIL1+MKFY4ePxMVY48Z5WLieS99vwlBHAs+vMvC0iiQMQVtwtfZ8sB85wa16+Z4Wt/uqj6HackYl2zPL/tt1r+UtBN5mPgzVwFtlOh/xIz8OcqBN/palkIK36/H4AHpmy1bnMbjhJNt
+
+gemini-1.5-flash Status: 404 in 280ms
+Response: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}
+
+gemini-2.0-flash Status: 429 in 376ms
+Response: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_cont
+
