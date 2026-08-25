@@ -4,6 +4,7 @@ import React, {
   useRef,
   useCallback,
 } from "react";
+import { GoogleGenAI } from "@google/genai";
 import { Send, Sparkles, X } from "lucide-react";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -108,11 +109,13 @@ ${SANJEET_PROFILE_DATA}
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Gemini REST config — no SDK, just fetch. Key read once at module level.
+// Gemini SDK config — the key is passed only through SDK initialization.
 // ─────────────────────────────────────────────────────────────────────────────
-const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
+const GEMINI_API_KEY = (import.meta.env.VITE_GEMINI_API_KEY as string | undefined)?.trim();
+const GEMINI_CLIENT = GEMINI_API_KEY
+  ? new GoogleGenAI({ apiKey: GEMINI_API_KEY })
+  : null;
 const GEMINI_MODEL = "gemini-3.6-flash";
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Message formatting — lightweight inline Markdown for bot replies
@@ -299,7 +302,7 @@ const ChatBot: React.FC = () => {
   // `history` MUST already contain the new user turn as its last entry.
   // The full history is sent so Gemini has complete conversation context.
   const handleAPICall = useCallback(async (history: HistoryMessage[]) => {
-    if (!GEMINI_API_KEY) {
+    if (!GEMINI_CLIENT) {
       setError("API key missing. Add VITE_GEMINI_API_KEY to your .env file.");
       return;
     }
@@ -314,52 +317,21 @@ const ChatBot: React.FC = () => {
     setError(null);
 
     try {
-      // Map the full conversation history into Gemini's `contents` format.
-      // This sends every prior turn so the model has full context.
-      const contents = history.map((m) => ({
-        role: m.role,
-        parts: [{ text: m.content }],
+      const contents = history.map((message) => ({
+        role: message.role,
+        parts: [{ text: message.content }],
       }));
 
-      const payload = {
-        // systemInstruction injects the persona before the first user turn.
-        // The v1beta REST API only needs `parts` here — no role field.
-        systemInstruction: {
-          parts: [{ text: SYSTEM_INSTRUCTION }],
-        },
+      const data = await GEMINI_CLIENT.models.generateContent({
+        model: GEMINI_MODEL,
         contents,
-        generationConfig: {
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.3,
           maxOutputTokens: 1024,
           topP: 0.9,
         },
-        safetySettings: [
-          { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" },
-        ],
-      };
-
-      const response = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
       });
-
-      if (!response.ok) {
-        const errBody = await response.text().catch(() => "");
-        const fallbackMessage = "The AI server is currently busy. Please try again in a few moments.";
-
-        if (response.status === 503 || response.status >= 500) {
-          appendBotReply(fallbackMessage, history);
-          return;
-        }
-
-        throw new Error(`Gemini ${response.status}: ${errBody || "Request failed."}`);
-      }
-
-      const data = await response.json();
 
       // ── Blocked at prompt level (no candidates produced at all) ───────────
       if (!data?.candidates || data.candidates.length === 0) {
@@ -430,7 +402,7 @@ const ChatBot: React.FC = () => {
       const msg = err instanceof Error ? err.message : "Something went wrong. Try again.";
       const fallbackMessage = "The AI server is currently busy. Please try again in a few moments.";
 
-      if (/503|5\d\d|fetch/i.test(msg)) {
+      if (/401|403|503|5\d\d|fetch/i.test(msg)) {
         appendBotReply(fallbackMessage, history);
       } else {
         setError(msg);
@@ -503,7 +475,7 @@ const ChatBot: React.FC = () => {
   const sendMessage = useCallback(async () => {
     const text = input.trim();
     if (!text || isThinking) return;
-    if (!GEMINI_API_KEY) {
+    if (!GEMINI_CLIENT) {
       setError("API key missing. Add VITE_GEMINI_API_KEY to your .env file.");
       return;
     }
