@@ -521,7 +521,7 @@ const SkillNode = ({
   <div className="group flex flex-col items-center gap-2 cursor-default select-none">
     {/* pill card */}
     <div
-      className={`
+      className={`skills-timeline-card
         flex items-center gap-2 px-4 py-2 rounded-xl
         bg-white/[0.04] border border-white/[0.08]
         backdrop-blur-sm
@@ -574,9 +574,9 @@ const SkillNode = ({
 // One full category row
 // ─────────────────────────────────────────────────────────────────────────────
 const TimelineRow = ({ category }: { category: SkillCategory }) => (
-  <div className="flex items-start gap-6 md:gap-10">
+  <div className="flex min-w-0 items-start gap-3 md:gap-10">
     {/* ── Left: category label ── */}
-    <div className="flex flex-col items-center gap-2.5 w-[140px] md:w-[170px] shrink-0 pt-1">
+    <div className="flex flex-col items-center gap-2.5 w-[92px] sm:w-[140px] md:w-[170px] shrink-0 pt-1">
       <div
         className={`
           w-11 h-11 rounded-2xl
@@ -627,9 +627,10 @@ const TimelineRow = ({ category }: { category: SkillCategory }) => (
 const SkillsTimeline = () => (
   <div
     className="
+      w-full min-w-0
       rounded-2xl border border-white/10
       bg-[#0d1527]/60 backdrop-blur-md
-      py-12 px-6 md:px-10
+      py-12 px-4 md:px-10
       shadow-2xl shadow-black/50
       relative overflow-hidden
     "

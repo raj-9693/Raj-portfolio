@@ -2,11 +2,20 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Menu, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import emailjs from "@emailjs/browser";
 import ProjectsSection from "./ProjectsSection";
 import SkillsTimeline from "./SkillsTimeline";
+
+const navLinks = [
+  { href: "#home", label: "HOME" },
+  { href: "#about", label: "ABOUT ME" },
+  { href: "#skills", label: "SKILLS" },
+  { href: "#projects", label: "PROJECTS" },
+  { href: "#resume", label: "RESUME" },
+  { href: "#contact", label: "CONTACT" },
+];
 
 const HomePage = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +25,7 @@ const HomePage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
 
@@ -73,50 +83,78 @@ const HomePage = () => {
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        <div className="w-full max-w-7xl px-6 py-4 flex justify-between items-center">
+        <div className="site-nav-inner w-full max-w-7xl px-6 py-4 flex justify-between items-center gap-3">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="bg-blue-600 p-1 rounded">
               <span className="font-bold text-xl">RKN</span>
             </div>
-            <span className="font-bold text-xl tracking-wide">RAJ KUMAR NISHAD</span>
+            <span className="hidden sm:inline font-bold text-xl tracking-wide truncate">RAJ KUMAR NISHAD</span>
           </div>
 
           {/* Links */}
           <div className="hidden md:flex gap-8">
-            {[
-              { href: "#home", label: "HOME" },
-              { href: "#about", label: "ABOUT ME" },
-              { href: "#skills", label: "SKILLS" },
-              { href: "#projects", label: "PROJECTS" },
-              { href: "#resume", label: "RESUME" },
-              { href: "#contact", label: "CONTACT" },
-            ].map(({ href, label }) => (
+            {navLinks.map(({ href, label }) => (
               <a key={href} href={href} className="nav-link">
                 {label}
               </a>
             ))}
           </div>
 
-          {/* CTA Button */}
-          <Button
-            className="
-              bg-gradient-to-r from-green-400 to-blue-500
-              hover:from-green-500 hover:to-blue-600
-              rounded-full px-8 py-3 font-semibold
-              transition-all duration-300 ease-out
-              hover:scale-[1.03]
-              hover:shadow-[0_0_20px_4px_rgba(52,211,153,0.45),0_0_40px_8px_rgba(59,130,246,0.25)]
-            "
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            LET'S TALK
-          </Button>
+          <div className="flex items-center gap-3">
+            {/* CTA Button */}
+            <Button
+              className="
+                bg-gradient-to-r from-green-400 to-blue-500
+                hover:from-green-500 hover:to-blue-600
+                rounded-full px-4 sm:px-8 py-3 font-semibold text-xs sm:text-sm whitespace-nowrap
+                transition-all duration-300 ease-out
+                hover:scale-[1.03]
+                hover:shadow-[0_0_20px_4px_rgba(52,211,153,0.45),0_0_40px_8px_rgba(59,130,246,0.25)]
+              "
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              LET'S TALK
+            </Button>
+
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              className="md:hidden shrink-0 text-white hover:bg-white/10 hover:text-white"
+              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </Button>
+          </div>
         </div>
+
+        {isMenuOpen && (
+          <div
+            id="mobile-navigation"
+            className="md:hidden absolute top-full left-0 right-0 border-t border-white/10 bg-slate-950/95 px-4 py-3 shadow-xl backdrop-blur-md"
+          >
+            <div className="flex flex-col">
+              {navLinks.map(({ href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="border-b border-white/10 px-2 py-3 text-sm font-medium tracking-wide text-white/75 transition-colors last:border-b-0 hover:text-white"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Spacer so content doesn't hide under fixed nav */}
@@ -124,8 +162,8 @@ const HomePage = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="container mx-auto py-10 flex flex-col md:flex-row items-center gap-10">
-        <div className="flex-1">
+        className="hero-section relative container mx-auto w-full max-w-7xl min-h-[calc(100svh-72px)] overflow-hidden px-4 sm:px-6 py-10 md:py-16 flex flex-col md:flex-row items-center gap-10">
+        <div className="w-full min-w-0 flex-1">
           <div className="flex items-center gap-3 mb-4">
             <div className="relative flex h-3 w-3">
               <span
@@ -218,12 +256,12 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 relative">
+        <div className="relative w-full min-w-0 flex-1">
           <div className="relative z-10">
             <img
               src={new URL('/images/profile.png', import.meta.url).href}
               alt="Raj Kumar Nishad"
-              className="rounded-full max-w-sm mx-auto shadow-2xl shadow-blue-500/20 animate-bounce "
+              className="block w-full max-w-[280px] h-auto object-contain rounded-full mx-auto shadow-2xl shadow-blue-500/20 animate-bounce "
               style={{
                 animation: "float 3s ease-in-out infinite",
               }} />
@@ -253,7 +291,7 @@ const HomePage = () => {
             <img
               src={new URL('/images/profile.png', import.meta.url).href}
               alt="Raj Kumar Nishad"
-              className="rounded-full max-w-sm mx-auto shadow-2xl shadow-blue-500/20"
+              className="block w-full max-w-[280px] h-auto object-contain rounded-full mx-auto shadow-2xl shadow-blue-500/20"
               style={{
                 animation: "float 3s ease-in-out infinite",
               }} />
@@ -451,7 +489,7 @@ const HomePage = () => {
       <div
         id="skills"
         ref={skillsRef}
-        className="mt-8 w-screen relative left-1/2 right-1/2 -mx-[50vw] px-4"
+        className="mt-8 w-full min-w-0 px-4 pb-24"
       >
         <div className="max-w-6xl mx-auto">
           <SkillsTimeline />

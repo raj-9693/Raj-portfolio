@@ -69,9 +69,74 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
   }
+
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    width: 100%;
+    min-width: 320px;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-nav-inner {
+    min-width: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  .hero-section {
+    min-height: calc(100svh - 72px);
+    padding: 2rem 1rem 4rem;
+    gap: 2.5rem;
+  }
+
+  .hero-section>* {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.25rem, 12vw, 3rem);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-section h2 {
+    font-size: clamp(1.5rem, 8vw, 1.875rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .project-grid,
+  .project-grid>* {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .skills-timeline-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .skills-timeline-card>span:last-child {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -108,4 +173,3 @@
 .nav-link:hover::after {
   transform: scaleX(1);
 }
-
