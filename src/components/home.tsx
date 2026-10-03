@@ -2,7 +2,15 @@ import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Linkedin, Mail, Download, Menu, X } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  Menu,
+  X,
+  MessageCircle,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import emailjs from "@emailjs/browser";
 import ProjectsSection from "./ProjectsSection";
@@ -13,6 +21,7 @@ const navLinks = [
   { href: "#about", label: "ABOUT ME" },
   { href: "#skills", label: "SKILLS" },
   { href: "#projects", label: "PROJECTS" },
+  { href: "https://projects-nots.vercel.app/", label: "APP OVERVIEW" },
   { href: "#resume", label: "RESUME" },
   { href: "#contact", label: "CONTACT" },
 ];
@@ -95,7 +104,13 @@ const HomePage = () => {
           {/* Links */}
           <div className="hidden md:flex gap-8">
             {navLinks.map(({ href, label }) => (
-              <a key={href} href={href} className="nav-link">
+              <a
+                key={href}
+                href={href}
+                className="nav-link"
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
                 {label}
               </a>
             ))}
@@ -147,6 +162,8 @@ const HomePage = () => {
                   key={href}
                   href={href}
                   className="border-b border-white/10 px-2 py-3 text-sm font-medium tracking-wide text-white/75 transition-colors last:border-b-0 hover:text-white"
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {label}
@@ -331,6 +348,17 @@ const HomePage = () => {
             hands-on personal projects and strongly believe in
             learning by doing."
           </p>
+
+          <div className="grid grid-cols-2 gap-4 mb-8 max-w-md">
+            <div className="group rounded-lg border border-slate-700 bg-slate-800/70 p-4 transition-all duration-300 ease-out hover:scale-105 hover:border-blue-500/70 hover:bg-slate-800 hover:shadow-[0_0_24px_rgba(59,130,246,0.25)]">
+              <p className="text-3xl font-bold text-blue-400 transition-colors duration-300 group-hover:text-blue-300">5+</p>
+              <p className="text-sm text-gray-400 transition-colors duration-300 group-hover:text-gray-200">Projects</p>
+            </div>
+            <div className="group rounded-lg border border-slate-700 bg-slate-800/70 p-4 transition-all duration-300 ease-out hover:scale-105 hover:border-blue-500/70 hover:bg-slate-800 hover:shadow-[0_0_24px_rgba(59,130,246,0.25)]">
+              <p className="text-3xl font-bold text-blue-400 transition-colors duration-300 group-hover:text-blue-300">1.5+</p>
+              <p className="text-sm text-gray-400 transition-colors duration-300 group-hover:text-gray-200"> Years Learning & Building</p>
+            </div>
+          </div>
 
           <Button
             className="bg-blue-600 hover:bg-blue-700 rounded-full px-6 flex items-center gap-2"
@@ -528,6 +556,28 @@ const HomePage = () => {
                   <p
                     className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 group-hover:underline">
                     rajnishad96930@gmail.com
+                  </p>
+                </div>
+              </a>
+              <a
+                href="https://wa.me/919693057161"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-slate-800/50 p-3 rounded-lg">
+                <div
+                  className="bg-blue-500/20 w-12 h-12 rounded-lg flex items-center justify-center group-hover:bg-blue-500/30 transition-all duration-300 group-hover:scale-110">
+                  <MessageCircle
+                    className="text-blue-500 group-hover:text-blue-400 transition-colors duration-300"
+                    size={20} />
+                </div>
+                <div>
+                  <h4
+                    className="font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
+                    WhatsApp
+                  </h4>
+                  <p
+                    className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 group-hover:underline">
+                    +91 9693057161
                   </p>
                 </div>
               </a>
