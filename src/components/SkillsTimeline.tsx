@@ -146,6 +146,16 @@ const AsyncStorageIcon = () => (
   </svg>
 );
 
+const MongoDbIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path
+      d="M12 2.5c-2.8 3.6-4.2 6.4-4.2 9.5 0 3.6 1.6 6.2 4.2 8.5 2.6-2.3 4.2-4.9 4.2-8.5 0-3.1-1.4-5.9-4.2-9.5Z"
+      fill="#47A248"
+    />
+    <path d="M12 7v14" stroke="#d9f99d" strokeWidth="1.2" strokeLinecap="round" />
+  </svg>
+);
+
 const ReduxIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
     <path d="M12 3c4.8 0 8 2.2 8 5 0 2.2-2.1 3.9-4.8 4.6l-2.4 1.2c-1.2.6-2 1.8-2 3.1 0 1.4 1.2 2.6 3.1 2.6 1.4 0 2.8-.5 3.7-1.4" stroke="#a78bfa" strokeWidth="1.6" strokeLinecap="round" />
@@ -453,6 +463,7 @@ const categories: SkillCategory[] = [
       { name: "SQLite", icon: <SqliteIcon /> },
       { name: "Firebase", icon: <FirebaseIcon /> },
       { name: "AsyncStorage", icon: <AsyncStorageIcon /> },
+      { name: "MongoDB", icon: <MongoDbIcon /> },
     ],
   },
   {

@@ -25,10 +25,12 @@ Skills:
 Languages: Kotlin, JavaScript (ES6+), Java
 Mobile Frameworks: React Native, Android SDK
 Architecture: MVVM, Component Lifecycle, Hooks & State Management
+State Management: Redux Toolkit (RTK), Context API
+Backend: Node.js, Express.js, JWT Authentication
+Database: MongoDB, Room Database, SQLite, AsyncStorage, Firebase
 Networking: Retrofit, Axios, REST APIs
-Local Storage: Room Database, SQLite, AsyncStorage
 UI/UX: Material Design, ConstraintLayout, Flexbox
-Tools: Android Studio, VS Code, Expo CLI, Git & GitHub, Firebase
+Tools: Android Studio, VS Code, Expo CLI, Git & GitHub, Postman
 
 React Native:
 - React Native CLI, React Navigation (Stack, Bottom Tab, Auth Flow)
@@ -37,19 +39,17 @@ React Native:
 - Android Build Process, Gradle, Firebase Basics
 
 Stats:
-- 20+ GitHub Repositories
+- 15+ GitHub Repositories
 - 5+ Android/Mobile Projects
 
 Projects:
-- Android apps: Kotlin + MVVM + Firebase
-- REST API apps: Retrofit integration
-- Local DB apps: Room DB + SQLite
-- React Native: Data-Filtering Search Component (conditional array filtering)
-- React Native: Digital Drawing Canvas App (layered logic, pencil tools, eraser states)
-- React Native: Local DB storage utilities (SQLite transactions)
+- InstaNews App (React Native) — Real-time news app using Retrofit for REST API data, RecyclerView for listing, Glide for images, Search functionality, and WebView for full articles.
+- NotesTodo App (React Native + Node.js/Express/MongoDB) — Full-stack notes and todo management app with JWT-based authentication, bcrypt password hashing, forgot-password flow via email OTP, category-based note organization, and checklist-style todos.
+- Student_Info App (Android/Kotlin) — Student management app using Room Database with full CRUD operations, BottomSheetDialog for add/edit/delete, MVVM architecture with ViewModel and LiveData.
+- Competitions App (React Native + Node.js) — Event/competition discovery app with Home and Details screens, backend-driven register flow, AI-assisted UI design.
 
 Looking for:
-- Android / Mobile Developer Internship or Entry-level role
+- Android / Mobile Developer opportunities (Entry-level, Growth-oriented roles)
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -84,7 +84,6 @@ const SUGGESTION_CHIPS = [
   { label: "Your Skills", text: "What are Raj's technical skills and expertise?" },
   { label: "Your Projects?", text: "Tell me about Raj's projects and what he has built." },
   { label: "Hire you", text: "How can I hire Raj or get in touch with him?" },
-  { label: "Contact info?", text: "What is Raj's contact information?" },
   { label: "Education", text: "Tell me about Raj's education and background." },
 ];
 
