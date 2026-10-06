@@ -208,7 +208,7 @@ const HomePage = () => {
             className="text-3xl font-bold mb-6">
             <span className="text-white">I'M A </span>
             <span className="inline-block bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-default">
-              FRESHER MOBILE APPLICATION DEVELOPER"
+              REACT NATIVE DEVELOPER"
             </span>
           </motion.h2>
           <style>{`
@@ -224,7 +224,7 @@ const HomePage = () => {
             }
           `}</style>
           <p className="text-gray-400 mb-8 max-w-lg">
-            "A passionate Fresher Mobile Developer with strong foundational skills in Native Android (Kotlin) and React Native. I have spent my time building personal applications to understand local storage, APIs, and UI states. Eager to join a professional development team as a junior developer or intern to contribute, learn from experts, and tackle real-world challenges."
+            "A passionate Fresher Mobile Developer specializing in React Native, with a strong foundation in Native Android (Kotlin) development. I build cross-platform mobile apps with clean UI, state management, REST API integration, and local/backend databases. Eager to join a professional development team to contribute, learn from experts, and tackle real-world challenges."
           </p>
           <div className="flex gap-4 mb-8">
             <Button
@@ -278,7 +278,7 @@ const HomePage = () => {
             <img
               src={new URL('/images/profile.png', import.meta.url).href}
               alt="Raj Kumar Nishad"
-              className="block w-full max-w-[280px] h-auto object-contain rounded-full mx-auto shadow-2xl shadow-blue-500/20 animate-bounce "
+              className="block w-full max-w-[300px] h-auto object-contain rounded-full mx-auto shadow-2xl shadow-blue-500/20 animate-bounce "
               style={{
                 animation: "float 3s ease-in-out infinite",
               }} />
@@ -308,7 +308,7 @@ const HomePage = () => {
             <img
               src={new URL('/images/profile.png', import.meta.url).href}
               alt="Raj Kumar Nishad"
-              className="block w-full max-w-[280px] h-auto object-contain rounded-full mx-auto shadow-2xl shadow-blue-500/20"
+              className="block w-full max-w-[320px] h-auto object-contain rounded-full mx-auto shadow-2xl shadow-blue-600/50"
               style={{
                 animation: "float 3s ease-in-out infinite",
               }} />
@@ -329,24 +329,30 @@ const HomePage = () => {
         </div>
         <div className="flex-1">
           <h3 className="text-blue-500 font-medium mb-2">"Crafting Smooth Mobile Experiences Across Android & iOS"</h3>
-          <h2 className="text-3xl font-bold mb-6">
-            "I build modern, functional mobile apps with Kotlin and React Native."
+          <h2 className="text-2xl font-bold mb-6">
+            "I build modern, functional mobile apps with React Native, backed by a strong foundation in Native Android (Kotlin)."
           </h2>
           <p className="text-gray-400 mb-8">
-            "I am a passionate Mobile App Developer focused
-            on creating intuitive and user-friendly applications.
-            With hands-on experience in Native Android (Kotlin,Room DB,XML)
-            and React Native, I love building features that
-            solve real-world problems—whether it’s managing local
-            storage, handling live API data, or building custom interactive UI layers."
+           "I am a passionate Mobile App Developer focused on 
+           creating intuitive, cross-platform applications with React Native.
+            With hands-on experience in state management, REST API integration,
+             and local/backend databases, I love building features that solve 
+             real-world problems — whether it's managing persistent data, handling
+              live API data, or designing clean, responsive UI layers. My background 
+              in Native Android (Kotlin, Room DB) helps me bridge native functionality
+               when needed.
             <br />
             <br />
-            "Currently, I am pursuing my BCA and actively seeking
-            internship or entry-level opportunities to grow as a
-            developer in a collaborative team environment. I
-            continuously sharpen my skills through practical,
-            hands-on personal projects and strongly believe in
-            learning by doing."
+            I actively use AI-assisted development tools 
+            to write efficient code and learn faster, while making 
+            sure I understand the logic behind every line I ship."
+             <br />
+            <br />
+            "Currently, I am pursuing my BCA and actively 
+            seeking opportunities to grow as a developer in
+             a collaborative team environment. I continuously 
+             sharpen my skills through practical, hands-on personal
+              projects and strongly believe in learning by doing."
           </p>
 
           <div className="grid grid-cols-2 gap-4 mb-8 max-w-md">
@@ -378,11 +384,11 @@ const HomePage = () => {
         <div className="text-center mb-12">
           <h3 className="text-blue-500 font-medium mb-2">RESUME</h3>
           <h2 className="text-3xl font-bold mb-4">
-            FRESHER ANDROID DEVELOPER - RESUME
+             REACT NATIVE DEVELOPER - RESUME
           </h2>
 
           <p className="text-gray-400 mb-8">
-            Download my resume to explore my learning journey and projects.
+           Download my resume for a detailed look at my skills and projects.
           </p>
           <div className="flex justify-center gap-4 mb-8">
             <Button
@@ -488,16 +494,16 @@ const HomePage = () => {
                     <div>
                       <h4
                         className="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
-                        Android Developer (Fresher)
+                       React Native Developer (Fresher)
                       </h4>
                       <p
                         className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
-                        Actively seeking Internship or Entry-level Opportunity
+                       Actively seeking Entry-level Opportunities
                       </p>
                       <p
                         className="text-gray-500 text-xs mt-1 group-hover:text-gray-400 transition-colors duration-300">
-                        Mobile developer skilled in native Android Kotlin, and actively building cross-platform
-                        apps using React Native and JavaScript from scratch.
+                           Mobile developer skilled in React Native and JavaScript, with a strong foundation in Native Android (Kotlin) — building 
+                           cross-platform apps from scratch with clean UI, state management, and API integration.
                       </p>
                     </div>
                   </div>

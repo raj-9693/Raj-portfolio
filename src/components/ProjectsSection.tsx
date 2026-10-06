@@ -196,12 +196,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             <span className="text-blue-500 font-medium mb-2">MY WORK</span>
             <h2 className="text-4xl font-bold mb-6">RECENT PROJECTS</h2>
             <p className="text-gray-400 max-w-2xl">
-              Here are some of the Android apps I’ve built recently. Each
-              project reflects my learning journey and showcases different
-              technologies, tools, and real-world use-cases in Android
-              development. From working with APIs to local databases, I’ve tried
-              to explore and apply various core components of the Android
-              ecosystem.
+               Here are some of the mobile apps I've built recently. Each
+  project reflects my learning journey and showcases different
+  technologies, tools, and real-world use-cases in React Native
+  and Android development. From working with REST APIs to local
+  and backend databases, I've tried to explore and apply various
+  core components of the mobile development ecosystem.
             </p>
           </motion.div>
         </div>
