@@ -395,8 +395,8 @@ const HomePage = () => {
               className="bg-blue-600 hover:bg-blue-700 rounded-full px-6 flex items-center gap-2"
               asChild>
               <a
-                href="https://drive.google.com/uc?export=download&id=1OAy2cJB8f3xG62NFArt5itEXEOxSVwkt"
-                download="Raj-Kumar-Nishad-Resume.pdf">
+                href={`${import.meta.env.BASE_URL}Raj-Nishad-ResumeAppDev.pdf`}
+                download="Raj-Nishad-ResumeAppDev.pdf">
                 <Download size={18} />
                 Download Resume
               </a>
@@ -406,7 +406,7 @@ const HomePage = () => {
               className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-full px-6"
               asChild>
               <a
-                href="https://drive.google.com/file/d/1OAy2cJB8f3xG62NFArt5itEXEOxSVwkt/view?usp=sharing"
+                href="https://drive.google.com/file/d/1HNVnqBIK1BwLsSpT_mvZrMxwxIjVCpZl/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer">
                 View Online
